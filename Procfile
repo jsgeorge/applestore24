@@ -1,2 +1,1 @@
-release: python manage.py migrate
-web: gunicorn nextdrf.wsgi
+web: gunicorn nextdrf.wsgi --log-file -
