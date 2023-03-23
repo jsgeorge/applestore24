@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ef7j%)j=3&v)=y8!%7kpnn^--0rwe=1ll!$5013s(ztwde2wp3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'applestore23.herokuapp.com']
 # Application definition
@@ -236,5 +236,5 @@ AWS_ACCESS_KEY_ID= os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY= os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME='gmfilestorage99'
 
-if os.getcwd() == '/app':
-    DEBUG:False
+# if os.getcwd() == '/app':
+#     DEBUG:False
