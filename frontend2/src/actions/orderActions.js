@@ -7,7 +7,7 @@ import { ADD_ORDER, ADD_ORDER_SUCCESS, ADD_ORDER_FAIL,
     ORDER_REQUEST, ORDER_SUCCESS,ORDER_FAIL,
     ORDER_DETAILS, ORDER_DETAILS_SUCCESS,ORDER_DETAILS_FAIL, ORDER_DETAILS_RESET,
     ORDER_SHIPPING, ORDER_SHIPPING_SUCCESS,ORDER_SHIPPING_FAIL, ORDER_SHIPPING_RESET } from '../constants/orderConstants';
-import { SERV } from '../api';
+import { SERV } from '../components/api';
 export const addShipping =(data)=> async (dispatch, getState) =>{
     
     dispatch({

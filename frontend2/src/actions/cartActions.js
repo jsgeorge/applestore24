@@ -1,7 +1,7 @@
 //Cart actions module
 import { CART_ADD_ITEM, CART_REMOVE_ITEM} from '../constants/cartConstants';
 import axios from 'axios';
-import { SERV } from '../api';
+import { SERV } from '../components/api';
 export const addToCart=(slug, qty)=> async (dispatch, getState) =>{
     
    //const {data} = await axios.get( `http://localhost:8000/api/store/products/${slug}/`)

@@ -2,7 +2,7 @@ import axios from 'axios'
 import {RATE_PRODUCT, RATE_PRODUCT_SUCCESS, RATE_PRODUCT_FAIL,
     REVIEW_PRODUCT, REVIEW_PRODUCT_SUCCESS, REVIEW_PRODUCT_FAIL,
     VIEW_REVIEWS, VIEW_REVIEWS_SUCCESS, VIEW_REVIEWS_FAIL, VIEW_REVIEWS_RESET} from "../constants/productConstants"
-import { SERV } from '../api';
+import { SERV } from '../components/api';
 export const rateProduct = (id,rating)=> async (dispatch, getState) =>{
 
     try {

@@ -10,7 +10,7 @@ import {
     USERS_REQUEST,USERS_SUCCESS,USERS_FAIL,
     LOGOUT_USER } from '../constants/userConstants';
 import { ORDER_RESET, ORDER_DETAILS_RESET } from '../constants/orderConstants';
-import { SERV } from '../api';
+import { SERV } from '../components/api';
 
 export const login = (username, password)=> async (dispatch) =>{
     try {  
