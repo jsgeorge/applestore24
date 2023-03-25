@@ -4,4 +4,4 @@
 //   }
 
 //export const SERV = 'http://localhost:8000'
-export const SERV = 'https://applestore23.herokuapp.com/'
+export const SERV = 'https://applestore23.herokuapp.com'
