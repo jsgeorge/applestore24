@@ -10,6 +10,7 @@ import {
     USERS_REQUEST,USERS_SUCCESS,USERS_FAIL,
     LOGOUT_USER } from '../constants/userConstants';
 import { ORDER_RESET, ORDER_DETAILS_RESET } from '../constants/orderConstants';
+import { SERV } from '../api';
 
 export const login = (username, password)=> async (dispatch) =>{
     try {  
@@ -23,7 +24,8 @@ export const login = (username, password)=> async (dispatch) =>{
                 }
             }
             const {data} = await axios.post(
-                'http://localhost:8000/api/users/login/',
+                //'http://localhost:8000/api/users/login/',
+                `${SERV}/api/users/login/`,
                 {'username': username, 'password': password},
                 config
             )
@@ -59,6 +61,7 @@ export const signup = (firstname,lastname, email, username, password)=> async (d
                     }
                     const {data} = await axios.post(
                         'http://localhost:8000/api/users/signup/',
+                        `${SERV}/api/users/signup/`,
                         {   
                             'firstname' : firstname,
                             'lastname' : lastname,
@@ -107,7 +110,8 @@ export const updateProfile = (firstname,lastname, email, username)=> async (disp
                 }
             }
             const {data} = await axios.post(
-                `http://localhost:8000/api/users/update-profile/`,
+                //`http://localhost:8000/api/users/update-profile/`,
+                `${SERV}/api/users/update-profile/`,
                 {   
                     'firstname' : firstname,
                     'lastname' : lastname,
@@ -152,7 +156,8 @@ export const updatePassword = (password)=> async (dispatch, getState) =>{
                         }
                     }
                     const {data} = await axios.post(
-                        `http://localhost:8000/api/users/update-password/`,
+                       // `http://localhost:8000/api/users/update-password/`,
+                        `${SERV}/api/users/update-password/`,
                         {   
                             'password': password, 
                           },
@@ -196,7 +201,8 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
     }
 
       const { data} = await axios.get(
-        `http://localhost:8000/api/users/${id}/`,
+        //`http://localhost:8000/api/users/${id}/`,
+        `${SERV}/api/users/${id}/`,
         config
 
     )
@@ -237,7 +243,8 @@ export const getUserOrders = (id) => async (dispatch, getState) => {
     }
 
       const { data} = await axios.get(
-        `http://localhost:8000/api/orders/${id}/`,
+        //`http://localhost:8000/api/orders/${id}/`,
+        `${SERV}/api/orders/${id}/`,
         config
 
     )
@@ -278,7 +285,8 @@ export const getUsers = (id) => async (dispatch, getState) => {
     }
 
       const { data} = await axios.get(
-        `http://localhost:8000/api/users/`,
+        //`http://localhost:8000/api/users/`,
+        `${SERV}/api/users/`,
         config
 
     )

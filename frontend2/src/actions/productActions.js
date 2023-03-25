@@ -2,7 +2,7 @@ import axios from 'axios'
 import {RATE_PRODUCT, RATE_PRODUCT_SUCCESS, RATE_PRODUCT_FAIL,
     REVIEW_PRODUCT, REVIEW_PRODUCT_SUCCESS, REVIEW_PRODUCT_FAIL,
     VIEW_REVIEWS, VIEW_REVIEWS_SUCCESS, VIEW_REVIEWS_FAIL, VIEW_REVIEWS_RESET} from "../constants/productConstants"
-
+import { SERV } from '../api';
 export const rateProduct = (id,rating)=> async (dispatch, getState) =>{
 
     try {
@@ -25,7 +25,8 @@ export const rateProduct = (id,rating)=> async (dispatch, getState) =>{
             console.log('config', config)
 
             const {data} = await axios.post(
-                `http://localhost:8000/api/store/products/${id}/rate/`,
+                // `http://localhost:8000/api/store/products/${id}/rate/`,
+                 `${SERV}/api/store/products/${id}/rate/`,
                 rating,
                 config
             )
@@ -68,7 +69,8 @@ export const reviewProduct = (id,review)=> async (dispatch, getState) =>{
                 console.log('config', config)
     
                 const {data} = await axios.post(
-                    `http://localhost:8000/api/store/products/${id}/review/`,
+                   // `http://localhost:8000/api/store/products/${id}/review/`,
+                    `${SERV}/api/store/products/${id}/review/`,
                     review,
                     config
                 )
@@ -106,7 +108,8 @@ export const getProductReviews = (id) => async (dispatch, getState) => {
             
         
               const { data} = await axios.get(
-                `http://localhost:8000/store/products/${id}/reviews/`,
+                // `http://localhost:8000/store/products/${id}/reviews/`,
+                `${SERV}/api/store/products/${id}/reviews/`,
                 config
         
             )

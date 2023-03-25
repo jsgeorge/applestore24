@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ef7j%)j=3&v)=y8!%7kpnn^--0rwe=1ll!$5013s(ztwde2wp3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'applestore23.herokuapp.com','www.shoprtech.com','shoprtech.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','applestore23.herokuapp.com','www.shoprtech.com','shoprtech.com']
 # Application definition
 
 INSTALLED_APPS = [

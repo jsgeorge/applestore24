@@ -1,8 +1,9 @@
 
 import React, {useState, useEffect} from "react";
 import { useCookies } from 'react-cookie';
-const SERV = 'http://localhost:8000'
-//const SERV = 'https://techshedapig.herokuapp.com'
+import  SERV from "./index"
+//const SERV = 'http://localhost:8000'
+
 
 function APIlookup(method, endpoint) { 
     const [table, setTable]  = useState([]);

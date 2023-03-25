@@ -7,7 +7,7 @@ import { ADD_ORDER, ADD_ORDER_SUCCESS, ADD_ORDER_FAIL,
     ORDER_REQUEST, ORDER_SUCCESS,ORDER_FAIL,
     ORDER_DETAILS, ORDER_DETAILS_SUCCESS,ORDER_DETAILS_FAIL, ORDER_DETAILS_RESET,
     ORDER_SHIPPING, ORDER_SHIPPING_SUCCESS,ORDER_SHIPPING_FAIL, ORDER_SHIPPING_RESET } from '../constants/orderConstants';
-
+import { SERV } from '../api';
 export const addShipping =(data)=> async (dispatch, getState) =>{
     
     dispatch({
@@ -66,7 +66,8 @@ export const addOrder =(order)=> async (dispatch, getState) =>{
             console.log('config', config)
 
             const {data} = await axios.post(
-                'http://localhost:8000/api/orders/add/',
+                // 'http://localhost:8000/api/orders/add/',
+                `${SERV}/api/orders/add/`,
                 order,
                 config
             )
@@ -116,7 +117,8 @@ export const getOrder = (id) => async (dispatch, getState) => {
         
         
               const { data} = await axios.get(
-                `http://localhost:8000/api/orders/view/${id}/`,
+                // `http://localhost:8000/api/orders/view/${id}/`,
+                `${SERV}/api/orders/view/${id}/`,
                 config
         
             )
@@ -158,7 +160,8 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
             
         
               const { data} = await axios.get(
-                `http://localhost:8000/api/orders/details/${id}/`,
+                // `http://localhost:8000/api/orders/details/${id}/`,
+                  `${SERV}/api/orders/details/${id}/`,
                 config
         
             )
