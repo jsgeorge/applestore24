@@ -183,11 +183,13 @@ CSRF_COOKIE_HTTPONLY = True
 SESSION_COOKIE_HTTPONLY = True
 
 #CORS_ORIGIN_ALLOW_ALL = True  # any website has asccess to API
-#CORS_URLS_REGEX = r'^/api/.*$'
+#CORS_URLS_REGEX = r'^/api/.*$'W
 CSRF_TRUSTED_ORIGINS = ['http://localhost:3000']
 CORS_ALLOWED_ORIGINS = [
      "http://localhost:3000",
      "http://127.0.0.1:3000",
+     'https://applestore23.herokuapp.com'
+
 ]
 
 CORS_EXPOSE_HEADERS = ["Content-Type", "X-CSRFToken"]
