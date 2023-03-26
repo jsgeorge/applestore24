@@ -60,7 +60,7 @@ export const signup = (firstname,lastname, email, username, password)=> async (d
                         }
                     }
                     const {data} = await axios.post(
-                        'http://localhost:8000/api/users/signup/',
+                        //'http://localhost:8000/api/users/signup/',
                         `${SERV}/api/users/signup/`,
                         {   
                             'firstname' : firstname,

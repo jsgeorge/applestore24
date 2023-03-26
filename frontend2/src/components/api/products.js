@@ -553,7 +553,7 @@ export function ProductDetailComponent(props){
       let data = {
         like:true
       }
-      APIpost("POST", `/api/store/products/${slug}/like/`, data, token['auth-token'])
+      APIpost("POST", `/api/store/products/${slug}/like/`, data)
     }
     
     const onSubmitReview = (e) =>{

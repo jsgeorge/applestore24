@@ -1,9 +1,9 @@
 
-import React, {useState, useEffect} from "react";
+import React, {useState, getState, useEffect} from "react";
 import { useCookies } from 'react-cookie';
 import { SERV} from "./index"
 //const SERV = 'http://localhost:8000'
-
+import {useDispatch, useSelector} from 'react-redux'
 
 function APIlookup(method, endpoint) { 
     const [table, setTable]  = useState([]);
@@ -33,10 +33,12 @@ export {APIlookup}
 
 function APIAuthlookup(method, endpoint) { 
     const [table, setTable]  = useState([]);
-    const [token, setToken] = useCookies(['auth-token']);
-
+   // const [token, setToken] = useCookies(['auth-token']);
+  const dispatch = useDispatch()
+    const userLogin = useSelector(state=>state.userLogin)
+    const {userInfo} = userLogin
     useEffect(()=>{
-        if (token) {
+    
         async function fetchData(){
             let url = `${SERV}${endpoint}`;
            
@@ -44,7 +46,7 @@ function APIAuthlookup(method, endpoint) {
                 method: method,
                 headers:{
                     'Content-Type': 'application/json',
-                    'Authorization': `Token ${token['auth-token']}`
+                    'Authorization' : `Bearer ${userInfo.access}`
                 }
             })
             .then(resp => resp.json())
@@ -52,25 +54,27 @@ function APIAuthlookup(method, endpoint) {
             .catch(err => console.log(err))
         }
         fetchData();
-    }
-    }, [method, token, endpoint]);
+    
+    }, [method, userInfo]);
     return[table]
     
 }
 
 export {APIAuthlookup}
 
-function APIpost(method, endpoint, data, token){
+function APIpost(method, endpoint, data){
     
    // useEffect(()=>{
-        if (token) {
+    const dispatch = useDispatch()
+    const userLogin = useSelector(state=>state.userLogin)
+    const {userInfo} = userLogin
    
         ///async function postData(){
          fetch(`${SERV}${endpoint}`,{
                 method: method,
                 headers:{
                     'Content-Type': 'application/json',
-                    'Authorization': `Token ${token}`
+                    'Authorization': `Bearer ${userInfo.access}`
                 },
                 body: JSON.stringify(data)
             })
@@ -78,7 +82,7 @@ function APIpost(method, endpoint, data, token){
             // .catch(err => console.log(err))
         
         // postData();
-     }
+     
    // }, [method, endpoint, data])
     
     
