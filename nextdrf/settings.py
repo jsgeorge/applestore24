@@ -95,9 +95,9 @@ WSGI_APPLICATION = 'nextdrf.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'storedb',
+#         'NAME': 'applestore',
 #         'USER': 'postgres',
-#         'PASSWORD': 'mast1',
+#         'PASSWORD': 'superuser1',
 #         'HOST': 'localhost',
 #         'PORT': '5432'
 #     }
@@ -106,9 +106,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'applestore',
-        'USER': 'georgemr',
-        'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': 'applestore-identifier.cwikt4z0rddy.us-east-1.rds.amazonaws.com',
+        'USER': 'postgres',
+        'PASSWORD': 'qvcr90x1', #os.environ.get('DB_PASS'),
+        'HOST': 'applestore.cwikt4z0rddy.us-east-1.rds.amazonaws.com',
         'PORT': '5432'
     }
 }
@@ -229,15 +229,15 @@ SIMPLE_JWT = {
 }
 
 # django < 4.2
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # django < 4.2
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
 
-AWS_QUERYSTRING_AUTH=False
-AWS_ACCESS_KEY_ID= os.environ.get('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY= os.environ.get('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME='gmfilestorage99'
+# AWS_QUERYSTRING_AUTH=False
+# AWS_ACCESS_KEY_ID= os.environ.get('AWS_ACCESS_KEY_ID')
+# AWS_SECRET_ACCESS_KEY= os.environ.get('AWS_SECRET_ACCESS_KEY')
+# AWS_STORAGE_BUCKET_NAME='gmfilestorage99'
 
 # if os.getcwd() == '/app':
 #     DEBUG:False
